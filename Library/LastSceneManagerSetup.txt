@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/trainingBox.unity
+- path: Assets/virtualGym.unity
   isLoaded: 1
   isActive: 1
