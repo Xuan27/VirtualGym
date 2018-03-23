@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{92266d39-9e9b-4cff-9d97-e3f7a0fcf5b1}</ProjectGuid>
+    <ProjectGuid>{875eeaf7-3517-4394-88dd-abf8d138c7d2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssemblyCSharpWSA</RootNamespace>
@@ -333,14 +333,35 @@
     <SDKReference Include="WindowsTeam, Version=10.0.16299.0"/>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(UnityProjectDir)Assets\Script\CursorFeedback.cs">
+      <Link>Script\CursorFeedback.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\Script\CursorManager.cs">
+      <Link>Script\CursorManager.cs</Link>
+    </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Script\GazeGestureManager.cs">
       <Link>Script\GazeGestureManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\Script\GazeManager.cs">
+      <Link>Script\GazeManager.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\Script\GazeStabilizer.cs">
+      <Link>Script\GazeStabilizer.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\Script\GestureAction.cs">
+      <Link>Script\GestureAction.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\Script\GestureManager.cs">
+      <Link>Script\GestureManager.cs</Link>
     </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Script\SelectionCommand.cs">
       <Link>Script\SelectionCommand.cs</Link>
     </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Script\TapToManipulate.cs">
       <Link>Script\TapToManipulate.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\Script\TrainingBoxManager.cs">
+      <Link>Script\TrainingBoxManager.cs</Link>
     </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Script\WorldCursor.cs">
       <Link>Script\WorldCursor.cs</Link>

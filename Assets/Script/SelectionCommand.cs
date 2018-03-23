@@ -3,40 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectionCommand : MonoBehaviour {
-    // Called by GazeGestureManager when the user performs a Select gesture
 
     public GameObject[] selectionLights;
-    void OnSelect()
+
+    // Called by GazeGestureManager when the user performs a Select gesture
+    public static SelectionCommand Instance { get; private set; }
+
+    public Color SelectionColor { get; private set; }
+
+    public bool IsManipulating;
+
+
+
+    void Start()
     {
-        for(int i = 0; i < selectionLights.Length; i++)
+        Instance = this;
+        SelectionColor = Color.red;
+        IsManipulating = true;
+    }
+
+    private void OnSelect()
+    {
+        IsManipulating = true;
+        for (int i = 0; i < selectionLights.Length; i++)
         {
-            selectionLights[i].GetComponent<Renderer>().material.color = Color.yellow;
-           
+            selectionLights[i].GetComponent<Renderer>().material.color = Color.blue;
+            SelectionColor = selectionLights[i].GetComponent<Renderer>().material.color;
         }
-        
-        
-        //GetComponent<Renderer>().material.color = Color.green;
+        GestureManager.Instance.Transition(GestureManager.Instance.ManipulationRecognizer); 
+    }
 
-        //GameObject selectionLights = this.gameObject.transform.GetChild(0).gameObject;
-
-        //Debug.Log("Function argument: " + argument);
-        //Debug.Log(selectionLights.name);
-
-        // 2.d: Uncomment the below line to highlight the material when gaze enters.
-        //Debug.Log(selectMaterial[i].GetType);
-        //Debug.Log(this.get);
-
-        //for(int i = 0; i < selectMaterial.Length; i++)
-        //{
-        //   selectMaterial[i].color = Color.green;
-        //}
-        //
-
-        /* If the sphere has no Rigidbody component, add one to enable physics.
-        if (!this.GetComponent<Rigidbody>())
+    private void Deselect()
+    {
+        IsManipulating = false;
+        for (int i = 0; i < selectionLights.Length; i++)
         {
-            var rigidbody = this.gameObject.AddComponent<Rigidbody>();
-            rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-        }*/
+            selectionLights[i].GetComponent<Renderer>().material.color = Color.red;
+            SelectionColor = selectionLights[i].GetComponent<Renderer>().material.color;
+        }
     }
 }

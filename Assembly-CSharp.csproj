@@ -51,9 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\CursorFeedback.cs" />
+     <Compile Include="Assets\Script\CursorManager.cs" />
      <Compile Include="Assets\Script\GazeGestureManager.cs" />
+     <Compile Include="Assets\Script\GazeManager.cs" />
+     <Compile Include="Assets\Script\GazeStabilizer.cs" />
+     <Compile Include="Assets\Script\GestureAction.cs" />
+     <Compile Include="Assets\Script\GestureManager.cs" />
      <Compile Include="Assets\Script\SelectionCommand.cs" />
      <Compile Include="Assets\Script\TapToManipulate.cs" />
+     <Compile Include="Assets\Script\TrainingBoxManager.cs" />
      <Compile Include="Assets\Script\WorldCursor.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
