@@ -11,15 +11,22 @@ public class SelectionCommand : MonoBehaviour {
 
     public Color SelectionColor { get; private set; }
 
-    public bool IsManipulating;
+    public bool IsManipulating { get; private set; }
 
-
+    void Awake()
+    {
+        SelectionColor = Color.red;
+        IsManipulating = true;
+    }
 
     void Start()
     {
         Instance = this;
-        SelectionColor = Color.red;
-        IsManipulating = true;
+    }
+
+    void Update()
+    {
+
     }
 
     private void OnSelect()
@@ -30,7 +37,7 @@ public class SelectionCommand : MonoBehaviour {
             selectionLights[i].GetComponent<Renderer>().material.color = Color.blue;
             SelectionColor = selectionLights[i].GetComponent<Renderer>().material.color;
         }
-        GestureManager.Instance.Transition(GestureManager.Instance.ManipulationRecognizer); 
+        GestureManager.Instance.Transition(GestureManager.Instance.ManipulationRecognizer, IsManipulating);
     }
 
     private void Deselect()
@@ -41,5 +48,6 @@ public class SelectionCommand : MonoBehaviour {
             selectionLights[i].GetComponent<Renderer>().material.color = Color.red;
             SelectionColor = selectionLights[i].GetComponent<Renderer>().material.color;
         }
+        GestureManager.Instance.Transition(GestureManager.Instance.SelectionRecognizer, IsManipulating);
     }
 }

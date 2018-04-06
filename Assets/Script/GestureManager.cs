@@ -50,10 +50,10 @@ public class GestureManager : MonoBehaviour {
     public void ResetGestureRecognizers()
     {
         // Default to the navigation gestures.
-        Transition(SelectionRecognizer);
+        Transition(SelectionRecognizer, false);
     }
 
-    public void Transition(GestureRecognizer newRecognizer)
+    public void Transition(GestureRecognizer newRecognizer, bool Manipulation)
     {
         if (newRecognizer == null)
         {
@@ -72,38 +72,46 @@ public class GestureManager : MonoBehaviour {
         }
 
         newRecognizer.StartCapturingGestures();
+        IsManipulating = Manipulation;
         ActiveRecognizer = newRecognizer;
     }
 
     private void ManipulationRecognizer_ManipulationStarted(ManipulationStartedEventArgs obj)
     {
-        if (GazeManager.Instance.FocusedObject != null && SelectionCommand.Instance.IsManipulating == true)
+        if (GazeManager.Instance.FocusedObject != null && IsManipulating == true)
         {
             IsManipulating = true;
-            ManipulationPosition = Vector3.zero;
+            ManipulationPosition = GazeManager.Instance.Position;
 
             ManipulatingObject.SendMessageUpwards("PerformManipulationStart", ManipulationPosition);
+            GazeManager.Instance.TrainingBoxLight.tag = "selectionLight";
+            
+            GameObject[] unselectedLightParent = GameObject.FindGameObjectsWithTag("unselectedLight");
+            for(int i = 0; i < unselectedLightParent.Length; i++)
+            {
+                Debug.Log("Unselected Light parent name: " + unselectedLightParent[i].name);
+                Debug.Log("Unselected Light Training Box name: " + unselectedLightParent[i].transform.parent.name);
+            }
         }
     }
 
     private void ManipulationRecognizer_ManipulationUpdated(ManipulationUpdatedEventArgs obj)
     {
-        if (GazeManager.Instance.FocusedObject != null && SelectionCommand.Instance.IsManipulating == true)
+
+        if (GazeManager.Instance.FocusedObject != null && IsManipulating == true)
         {
             IsManipulating = true;
-
-            ManipulationPosition = obj.cumulativeDelta;
             ManipulationPosition = GazeManager.Instance.Position;
 
             ManipulatingObject.SendMessageUpwards("PerformManipulationUpdate", ManipulationPosition);
         }
     }
-
+    
     private void ManipulationRecognizer_ManipulationCompleted(ManipulationCompletedEventArgs obj)
     {
         IsManipulating = false;
-        GazeManager.Instance.FocusedObject.SendMessageUpwards("Deselect");
-        ResetGestureRecognizers();
+        GazeManager.Instance.TrainingBoxLight.tag = "unselectedLight";
+        GazeManager.Instance.TrainingBoxLight.SendMessageUpwards("Deselect");
     }
 
     private void ManipulationRecognizer_ManipulationCanceled(ManipulationCanceledEventArgs obj)
@@ -114,22 +122,17 @@ public class GestureManager : MonoBehaviour {
 
     private void SelectionRecognizer_Tapped(TappedEventArgs obj)
     {
-        //Parent of the focused object (selectionLight || selectionBox)
-        GameObject TransformParent = GazeManager.Instance.FocusedObject;
 
         //Default color of the selection lights
         Color startingColor = Color.red;
 
-        //Define the Manipulating Object to trainingBox
-        if (TransformParent.name == "selectionLight")
-            ManipulatingObject = TransformParent.gameObject.transform.parent.gameObject;
+        ManipulatingObject = GazeManager.Instance.FocusedObject;
 
-        else
-            ManipulatingObject = TransformParent.gameObject;
 
-        if (ManipulatingObject != null && SelectionCommand.Instance.SelectionColor == startingColor)
+
+        if (ManipulatingObject != null && SelectionCommand.Instance.SelectionColor == startingColor && GazeManager.Instance.Hit)
         {
-            GazeManager.Instance.FocusedObject.SendMessageUpwards("OnSelect");       
+           GazeManager.Instance.TrainingBoxLight.SendMessageUpwards("OnSelect");
         }
     }
 }

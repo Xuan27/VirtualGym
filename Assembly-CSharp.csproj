@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Connect.cs" />
      <Compile Include="Assets\Script\CursorFeedback.cs" />
      <Compile Include="Assets\Script\CursorManager.cs" />
      <Compile Include="Assets\Script\GazeGestureManager.cs" />

@@ -10,6 +10,10 @@ public class GazeManager : MonoBehaviour
 
     public GameObject FocusedObject { get; private set; }
 
+    public GameObject TrainingBoxLight { get; private set; }
+
+    public GameObject TrainingBox { get; private set; }
+
         [Tooltip("Maximum gaze distance for calculating a hit.")]
         public float MaxGazeDistance = 2.0f;
 
@@ -44,12 +48,12 @@ public class GazeManager : MonoBehaviour
         void Start()
     {
         Instance = this;
-    }    
+    }
 
-        void Awake()
-        {
-            gazeStabilizer = GetComponent<GazeStabilizer>();
-        }
+    void Awake()
+    {
+        gazeStabilizer = GetComponent<GazeStabilizer>();
+    }
 
         private void Update()
         {
@@ -75,21 +79,29 @@ public class GazeManager : MonoBehaviour
 
             HitInfo = hitInfo;
 
-            if (Hit)
-            {
-                // If raycast hit a hologram...
+        if (Hit)
+        {
+            // If raycast hit a hologram...
+            Position = hitInfo.point;
+            Normal = hitInfo.normal;
+            FocusedObject = hitInfo.collider.transform.parent.transform.parent.gameObject;
+            TrainingBoxLight = FocusedObject.transform.GetChild(0).gameObject;
+            TrainingBox = FocusedObject.transform.GetChild(1).gameObject;
+        }
 
-                Position = hitInfo.point;
-                Normal = hitInfo.normal;
-                FocusedObject = hitInfo.collider.gameObject.transform.parent.gameObject;
-            }
-            else
-            {
+        else
+        {
                 // If raycast did not hit a hologram...
                 // Save defaults ...
-                Position = gazeOrigin + (gazeDirection * MaxGazeDistance);
-                Normal = gazeDirection;
-                FocusedObject = null;
+               
+            Position = gazeOrigin + (gazeDirection * MaxGazeDistance);
+            Normal = gazeDirection;
+
+            if(FocusedObject != null)
+            {
+                TrainingBox = FocusedObject.transform.GetChild(1).gameObject;
+                TrainingBoxLight = FocusedObject.transform.GetChild(0).gameObject;
             }
         }
     }
+}

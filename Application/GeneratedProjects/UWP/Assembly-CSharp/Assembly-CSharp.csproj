@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{875eeaf7-3517-4394-88dd-abf8d138c7d2}</ProjectGuid>
+    <ProjectGuid>{ebe3a8be-7432-4130-8e88-34aafffa179f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssemblyCSharpWSA</RootNamespace>
@@ -333,6 +333,9 @@
     <SDKReference Include="WindowsTeam, Version=10.0.16299.0"/>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(UnityProjectDir)Assets\Script\Connect.cs">
+      <Link>Script\Connect.cs</Link>
+    </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Script\CursorFeedback.cs">
       <Link>Script\CursorFeedback.cs</Link>
     </Compile>
