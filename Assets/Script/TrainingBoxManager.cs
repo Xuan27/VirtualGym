@@ -14,8 +14,6 @@ public class TrainingBoxManager : MonoBehaviour {
 
     private GameObject movingObject;
 
-    private GameObject staticObject;
-
     private GameObject selectionLightParent;
 
     private GameObject[] unselectedLightParent;
@@ -121,8 +119,6 @@ public class TrainingBoxManager : MonoBehaviour {
             angle = Mathf.Atan2(yDiff, xDiff) * (180 / Mathf.PI);
             if(angle < 0)
                 angle += 360;
-
-            Debug.Log(angle);
         }
 
         for(int nearSelLight = 0; nearSelLight < lightSize; nearSelLight ++)
@@ -167,12 +163,7 @@ public class TrainingBoxManager : MonoBehaviour {
         connectionObjects = new GameObject[2];
         connectionObjects[0] = movingNearLight;
         connectionObjects[1] = staticNearLight;
-        Debug.Log("Moving object selection light name " + movingNearLight.name);
-        Debug.Log("Static object selection light name " + staticNearLight.name);
-        Debug.Log("Distance: " + tempDistance);
 
         return connectionObjects;
-        /*distance = Vector3.Distance(unselectedTrainingBox[unBox].transform.position, movingObject.transform.position);
-        Debug.Log(distance);*/
     }
 }

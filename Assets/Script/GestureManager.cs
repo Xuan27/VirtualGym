@@ -87,11 +87,6 @@ public class GestureManager : MonoBehaviour {
             GazeManager.Instance.TrainingBoxLight.tag = "selectionLight";
             
             GameObject[] unselectedLightParent = GameObject.FindGameObjectsWithTag("unselectedLight");
-            for(int i = 0; i < unselectedLightParent.Length; i++)
-            {
-                Debug.Log("Unselected Light parent name: " + unselectedLightParent[i].name);
-                Debug.Log("Unselected Light Training Box name: " + unselectedLightParent[i].transform.parent.name);
-            }
         }
     }
 
