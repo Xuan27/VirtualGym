@@ -14,7 +14,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 af723155c251fcfa0e66530a75f3ea4c UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 8341b3cb2ade13f5c82c8071edc414fb Assembly-CSharp.dll:.CursorManager
 6cc03098b62e074a8b9df1a7833d529b Assembly-CSharp.dll:.CursorFeedback
-8026b35856bbcdbe31104aec9fbde3fc Assembly-CSharp.dll:.Connect
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Connect
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -113,10 +113,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GestureManager
+e88df4cbd38205610278adf328c77f03 Assembly-CSharp.dll:.GestureManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GestureAction
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WorldCursor
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TrainingBoxManager
+e6918200cd64e158a12d29c92759de1f Assembly-CSharp.dll:.TrainingBoxManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TapToManipulate
 071d0a0209111483c0f5a12f17e69e89 Assembly-CSharp.dll:.GazeManager
 3ca0eb389510adc194400d196727f649 Assembly-CSharp.dll:.GazeStabilizer
@@ -145,3 +145,4 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+2e9e02fd74dd1aae64a1a9c122e47b9f Assembly-CSharp.dll:.TrainingBoxInfo

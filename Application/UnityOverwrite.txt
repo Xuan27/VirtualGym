@@ -8,7 +8,7 @@
 VirtualGym.sln: modified
 GeneratedProjects\UWP\Assembly-CSharp\project.json: 4FCF72A4D5EDB37E24C206A7BCFE7AF1
 VirtualGym\App.cs: 33DF46999A272C9C4763B6CC83AFAB30
-VirtualGym\Package.appxmanifest: 18236F9B0E9397FE0009EED98A34445C
+VirtualGym\Package.appxmanifest: 71338BF5788639A4E8E3FC704CBF95D4
 VirtualGym\project.json: 1D02BC64BAC0D041019673A1C4C51737
 VirtualGym\VirtualGym.csproj: modified
 VirtualGym\VirtualGym.csproj.user: modified

@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ebe3a8be-7432-4130-8e88-34aafffa179f}</ProjectGuid>
+    <ProjectGuid>{18d1c1f6-c908-4ec4-8ad5-7317df089f5f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssemblyCSharpWSA</RootNamespace>
@@ -362,6 +362,9 @@
     </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Script\TapToManipulate.cs">
       <Link>Script\TapToManipulate.cs</Link>
+    </Compile>
+    <Compile Include="$(UnityProjectDir)Assets\Script\TrainingBoxInfo.cs">
+      <Link>Script\TrainingBoxInfo.cs</Link>
     </Compile>
     <Compile Include="$(UnityProjectDir)Assets\Script\TrainingBoxManager.cs">
       <Link>Script\TrainingBoxManager.cs</Link>

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.XR.WSA.Input;
 
 /// <summary>
@@ -8,13 +9,16 @@ public class GazeManager : MonoBehaviour
     {
     public static GazeManager Instance { get; private set; }
 
-    public GameObject FocusedObject { get; private set; }
+    //Training box group of 6 selection lights
+    public GameObject TrainingBoxLightParent { get; private set; }
 
-    public GameObject TrainingBoxLight { get; private set; }
-
+    //Training box containing selection lights and selection box
     public GameObject TrainingBox { get; private set; }
 
-        [Tooltip("Maximum gaze distance for calculating a hit.")]
+    //Object that collides with the cursor
+    public GameObject FocusedTrainingBox { get; private set; }
+
+    [Tooltip("Maximum gaze distance for calculating a hit.")]
         public float MaxGazeDistance = 2.0f;
 
         [Tooltip("Select the layers raycast should target.")]
@@ -42,12 +46,20 @@ public class GazeManager : MonoBehaviour
         public Vector3 Normal { get; private set; }
 
         private GazeStabilizer gazeStabilizer;
-        private Vector3 gazeOrigin;
-        private Vector3 gazeDirection;
 
-        void Start()
+    /// <summary>
+    /// Vector with gaze origin coordinates
+    /// </summary>
+    private Vector3 gazeOrigin;
+
+    /// <summary>
+    /// Vector with gaze direction coordinates
+    /// </summary>
+    private Vector3 gazeDirection;
+
+    void Start()
     {
-        Instance = this;
+       Instance = this;
     }
 
     void Awake()
@@ -84,23 +96,24 @@ public class GazeManager : MonoBehaviour
             // If raycast hit a hologram...
             Position = hitInfo.point;
             Normal = hitInfo.normal;
-            FocusedObject = hitInfo.collider.transform.parent.transform.parent.gameObject;
-            TrainingBoxLight = FocusedObject.transform.GetChild(0).gameObject;
-            TrainingBox = FocusedObject.transform.GetChild(1).gameObject;
+            FocusedTrainingBox = hitInfo.collider.transform.parent.transform.parent.gameObject;
+
+            TrainingBoxLightParent = FocusedTrainingBox.transform.GetChild(0).gameObject;
+            TrainingBox = FocusedTrainingBox.transform.GetChild(1).gameObject;
         }
 
         else
         {
-                // If raycast did not hit a hologram...
-                // Save defaults ...
-               
+            // If raycast did not hit a hologram...
+            // Save defaults ...               
             Position = gazeOrigin + (gazeDirection * MaxGazeDistance);
             Normal = gazeDirection;
 
-            if(FocusedObject != null)
+            //Avoids null objects, so as to program start when no object has been hit ...
+            if(FocusedTrainingBox != null)
             {
-                TrainingBox = FocusedObject.transform.GetChild(1).gameObject;
-                TrainingBoxLight = FocusedObject.transform.GetChild(0).gameObject;
+                TrainingBox = FocusedTrainingBox.transform.GetChild(1).gameObject;
+                TrainingBoxLightParent = FocusedTrainingBox.transform.GetChild(0).gameObject;
             }
         }
     }

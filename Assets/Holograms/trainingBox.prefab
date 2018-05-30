@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33013395217204414}
   - component: {fileID: 135594694541859098}
   - component: {fileID: 23854645756189678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionLightX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,8 +40,24 @@ GameObject:
   - component: {fileID: 33091296997520226}
   - component: {fileID: 135231047386474436}
   - component: {fileID: 23617464220567504}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionLightNX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1226913644924628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4628222783414130}
+  - component: {fileID: 120397897917383040}
+  m_Layer: 0
+  m_Name: LineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +74,7 @@ GameObject:
   - component: {fileID: 33912984657909200}
   - component: {fileID: 135645760400904184}
   - component: {fileID: 23499048316031442}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionLightZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,9 +90,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4002863466781516}
   - component: {fileID: 114864454630730160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionLight
-  m_TagString: Untagged
+  m_TagString: unselectedLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +107,8 @@ GameObject:
   - component: {fileID: 4083523019132442}
   - component: {fileID: 23255167333209106}
   - component: {fileID: 114304802851230360}
-  m_Layer: 0
+  - component: {fileID: 114613693846128838}
+  m_Layer: 9
   m_Name: trainingBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +126,7 @@ GameObject:
   - component: {fileID: 33839402774580762}
   - component: {fileID: 135436120369157262}
   - component: {fileID: 23797461856246126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionLightNZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +144,7 @@ GameObject:
   - component: {fileID: 33172246848156310}
   - component: {fileID: 135497137455605248}
   - component: {fileID: 23540790994673684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionLightY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +162,7 @@ GameObject:
   - component: {fileID: 33445693599289436}
   - component: {fileID: 135487157647657970}
   - component: {fileID: 23066309838907978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionLightNY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +180,7 @@ GameObject:
   - component: {fileID: 33027697052548580}
   - component: {fileID: 65444076472852792}
   - component: {fileID: 23839091220642570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: selectionBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,6 +218,7 @@ Transform:
   m_Children:
   - {fileID: 4002863466781516}
   - {fileID: 4311582949819018}
+  - {fileID: 4628222783414130}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -268,6 +286,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4002863466781516}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4628222783414130
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226913644924628}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9147277, y: 0.060099933, z: -13.319895}
+  m_LocalScale: {x: 6.6666665, y: 6.6666665, z: 6.6666665}
+  m_Children: []
+  m_Father: {fileID: 4083523019132442}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4631422559844744
 Transform:
@@ -639,6 +670,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395f94c5d08352146a59cf7a54607712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114613693846128838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538101295473812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd0609f959ca8f4d8fcf57bf0d55a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrainingBoxObject: []
+  Static_NearObject: []
 --- !u!114 &114864454630730160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -657,6 +701,94 @@ MonoBehaviour:
   - {fileID: 1190159575286430}
   - {fileID: 1782542372499726}
   - {fileID: 1758572131054700}
+--- !u!120 &120397897917383040
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226913644924628}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c53d86e8355f32a458fb6cc85b04891d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0.10069656
+        value: 0.09952927
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    generateLightingData: 0
+  m_UseWorldSpace: 0
+  m_Loop: 0
 --- !u!135 &135231047386474436
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -45,8 +45,20 @@ public class SelectionCommand : MonoBehaviour {
         IsManipulating = false;
         for (int i = 0; i < selectionLights.Length; i++)
         {
-            selectionLights[i].GetComponent<Renderer>().material.color = Color.red;
-            SelectionColor = selectionLights[i].GetComponent<Renderer>().material.color;
+            //if(TrainingBoxManager.Instance.lockObject == 1)
+            //{
+               // if(TrainingBoxManager.Instance.movingNearLight.name != selectionLights[i].name)
+               // {
+                    //selectionLights[i].GetComponent<Renderer>().material.color = Color.red;
+                    //SelectionColor = selectionLights[i].GetComponent<Renderer>().material.color;
+                //}
+            //}
+            //else
+            //{
+                selectionLights[i].GetComponent<Renderer>().material.color = Color.red;
+                SelectionColor = selectionLights[i].GetComponent<Renderer>().material.color;
+            //}
+            
         }
         GestureManager.Instance.Transition(GestureManager.Instance.SelectionRecognizer, IsManipulating);
     }
