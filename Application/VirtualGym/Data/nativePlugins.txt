@@ -1,5 +1,0 @@
-PlaneFinding.dll
-GpuTiming.dll
-MicStreamSelector.dll
-SpatialUnderstanding.dll
-SharingClient.dll
