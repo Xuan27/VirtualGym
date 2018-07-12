@@ -222,6 +222,9 @@
  <Reference Include="Newtonsoft.Json">
  <HintPath>C:/VirtualGym/Version2/VirtualGym_HolotoolKit/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
  </Reference>
+ <Reference Include="ViconDataStreamSDK_CSharp">
+ <HintPath>C:/VirtualGym/Version2/VirtualGym_HolotoolKit/Assets/Plugins/ViconDataStreamSDK_CSharp.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/jmartinez91/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

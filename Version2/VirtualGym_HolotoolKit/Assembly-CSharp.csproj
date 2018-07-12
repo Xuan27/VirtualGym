@@ -533,6 +533,8 @@
      <Compile Include="Assets\HoloToolkit\UX\Scripts\UsabilityScaler.cs" />
      <Compile Include="Assets\HoloToolkit\UX\Scripts\UsabilityUtilities.cs" />
      <Compile Include="Assets\Scripts\CollisionBound.cs" />
+     <Compile Include="Assets\Scripts\Node.cs" />
+     <Compile Include="Assets\Scripts\PathFollower.cs" />
      <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\UnlitConfigurable.shader" />
      <None Include="Assets\HoloToolkit\UX\Shaders\HUXButtonShader.shader" />
      <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialUnderstandingSurface.shader" />
@@ -606,6 +608,9 @@
  </Reference>
  <Reference Include="Newtonsoft.Json">
  <HintPath>C:/VirtualGym/Version2/VirtualGym_HolotoolKit/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="ViconDataStreamSDK_CSharp">
+ <HintPath>C:/VirtualGym/Version2/VirtualGym_HolotoolKit/Assets/Plugins/ViconDataStreamSDK_CSharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/jmartinez91/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
