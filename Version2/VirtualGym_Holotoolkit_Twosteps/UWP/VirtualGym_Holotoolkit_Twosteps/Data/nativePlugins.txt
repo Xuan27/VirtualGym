@@ -1,0 +1,11 @@
+PlaneFinding.dll
+boost_thread-vc120-mt-1_60.dll
+ViconDataStreamSDK_CPP.dll
+boost_chrono-vc120-mt-1_60.dll
+boost_python-vc120-mt-1_60.dll
+GpuTiming.dll
+SharingClient.dll
+SpatialUnderstanding.dll
+ViconDataStreamSDK_C.dll
+boost_system-vc120-mt-1_60.dll
+boost_filesystem-vc120-mt-1_60.dll

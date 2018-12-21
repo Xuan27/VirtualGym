@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualGym_Holotoolkit_Twosteps", "Assembly-CSharp.csproj", "{9D776B50-0B1B-3E44-25EC-A009FC6A1B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualGym_Holotoolkit_Twosteps", "Assembly-CSharp-Editor.csproj", "{363CA26A-7560-D893-0F4F-1D1A75BAAD1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D776B50-0B1B-3E44-25EC-A009FC6A1B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D776B50-0B1B-3E44-25EC-A009FC6A1B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D776B50-0B1B-3E44-25EC-A009FC6A1B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D776B50-0B1B-3E44-25EC-A009FC6A1B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363CA26A-7560-D893-0F4F-1D1A75BAAD1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363CA26A-7560-D893-0F4F-1D1A75BAAD1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363CA26A-7560-D893-0F4F-1D1A75BAAD1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363CA26A-7560-D893-0F4F-1D1A75BAAD1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
